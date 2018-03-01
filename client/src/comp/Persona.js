@@ -1,5 +1,6 @@
 import React from "react";
 import Txs from "./Txs";
+import AnadirTx from "./AnadirTx"
 
 export default class Persona extends React.Component {
 	render() {
@@ -7,8 +8,24 @@ export default class Persona extends React.Component {
 		if (!persona) {
 			return null;
 		}
+		const nombre = persona.nombre;
+		const valor = persona.valor;
 		return (
-			<Txs {...persona} />
+			<div>
+				<p>{nombre}</p>
+				<p>
+					{
+						valor < 0 ? "Me debe: " : (valor > 0) ? "Le debo: " : ""
+					}
+					{
+						valor !== 0 && Math.abs(valor)
+					}
+				</p>
+				<AnadirTx
+					anadirTx={this.props.anadirTx}
+				/>
+				<Txs {...persona} />
+			</div>
 		);
 	}
 }

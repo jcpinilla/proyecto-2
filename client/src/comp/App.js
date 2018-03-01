@@ -7,60 +7,27 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			actual: "Camilo",
-			personas: [
-				{
-					nombre: "Juan",
-					valor: 20,
-					txs: [
-						{
-							id: 1,
-							valor: 30,
-							fecha: "02/02/2018",
-							concepto: "Lo de la gaseosa"
-						},
-						{
-							id: 2,
-							valor: -15,
-							fecha: "03/02/2018",
-							concepto: ""
-						}
-					]
-				},
-				{
-					nombre: "Camilo",
-					valor: 30,
-					txs: [
-						{
-							id: 3,
-							valor: 50,
-							fecha: "02/02/2018",
-							concepto: "Lo otro"
-						},
-						{
-							id: 4,
-							valor: -15,
-							fecha: "03/02/2018",
-							concepto: "Lo de la pizza"
-						}
-					]
-				},
-				{
-					nombre: "Pinilla",
-					valor: -10
-				},
-				{
-					nombre: "Ramirez",
-					valor: 0
-				},
-				{
-					nombre: "Solorzano",
-					valor: 0
-				}
-			]
+			actual: null,
+			personas: []
 		};
 		this.manejarClick = this.manejarClick.bind(this);
+		this.anadirTx = this.anadirTx.bind(this);
 	}
+
+	componentDidMount() {
+		fetch(`/api/usuarios/${1}`)
+			.then(res => res.json())
+			.then(data => {
+				this.setState({
+					personas: data
+				});
+			});
+	}
+
+	actualizarPersonas() {
+		
+	}
+	
 
 	darPersona() {
 		const personas = this.state.personas;
@@ -74,20 +41,50 @@ export default class App extends React.Component {
 	}
 
 	manejarClick(nombre) {
-		alert(nombre);
+		this.setState({
+			actual: nombre
+		});
+	}
+
+	anadirTx(valor, concepto) {
+		const fecha = new Date();
+
+		const tx = {
+			valor,
+			concepto,
+			id:fecha.getTime(),
+			fecha: fecha.toLocaleDateString()
+		};
+		fetch(`/api/usuarios/${1}/personas/${this.state.actual}`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(tx)
+		});
+		fetch(`/api/usuarios/${1}`)
+			.then(res => res.json())
+			.then(data => {
+				this.setState({
+					personas: data
+				});
+			});
 	}
 
 	render() {
 		const personas = this.state.personas;
 		return (
 			<div>
-				<Grupos
-					personas={personas}
-					onClick={this.manejarClick}
-				/>
-				<br />
-				<Persona persona={this.darPersona()} />
+			<Grupos
+			personas={personas}
+			onClick={this.manejarClick}
+			/>
+			<br />
+			<Persona
+			persona={this.darPersona()}
+			anadirTx={this.anadirTx}
+			/>
 			</div>
-		);
+			);
 	}
 }

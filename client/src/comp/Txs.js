@@ -4,6 +4,9 @@ import Tx from "./Tx";
 export default class Txs extends React.Component {
 	render() {
 		const txs = this.props.txs;
+		if (!txs || txs.length === 0) {
+			return null;
+		}
 		return (
 			<table>
 				<thead>
