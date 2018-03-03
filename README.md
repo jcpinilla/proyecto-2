@@ -23,4 +23,4 @@ MIT
 
 
 **Free Software, This project is licensed under the terms of the MIT license.**
-Detalles en [LICENSE](LINCENSE)
+Detalles en [LICENSE](https://github.com/jcpinilla/proyecto-2/blob/master/LICENSE)
