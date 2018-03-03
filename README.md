@@ -23,4 +23,4 @@ MIT
 
 
 **Free Software, This project is licensed under the terms of the MIT license.**
-Detalles en [LICENCE](LINCENCE)
+Detalles en [LICENSE](LINCENSE)
