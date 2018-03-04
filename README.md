@@ -11,12 +11,12 @@ La aplicación se encuentra desplegada [aquí](https://proyecto-2-pc.herokuapp.c
 
 ## Tecnologias
 
-En este proyecto utilizo diferentes tecnologias que permiten hacer paginas web dinamicas, entre las que se encuentran:
-
-  - React 
-  - Bootstrap
+En este proyecto se utilizó el conjunto MERN para crear aplicaciones web dinámicas y persistentes:
   - MongoDB
-  
+  - Express
+  - React
+  - Node
+
 ## Autores
   - [Juan Camilo Pinilla](https://github.com/jcpinilla/)
   - [Juan Diego Chaves](https://github.com/jd-chaves)
