@@ -108,7 +108,7 @@ export default class App extends React.Component {
 						<strong>¡Bienvenido! </strong>Ésta es una aplicación para manejar las cuentas personales. 
 						Puedes agregar personas con las que quieres manejar las cuentas con el botón <strong>Agregar Persona</strong>.
 						En la parte de <strong>Grupos </strong>
-						puedes ver quién te debe, a quién le debes y otras personas con las que estás al día. Puedes filtrar las personas en los grupos por nombre.
+						puedes ver quién te debe, a quién le debes y otras personas con las que estás al día. Las personas en los grupos las puedes filtrar por nombre.
 						Haciendo click sobre cada persona puedes ver el detalle de todas las transacciones que has tenido 
 						con esa persona, así como agregar nuevas transacciones. En la parte de <strong>Transacciones </strong>, 
 						un valor <em>positivo</em> indica que recibiste dinero, mientras que un valor <em>negativo</em> indica que diste dinero.
