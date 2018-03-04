@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const MongoClient = require("mongodb").MongoClient;
-const url = "mongodb://admin:admin@ds253918.mlab.com:53918";
+const url = "mongodb://admin:admin@ds253918.mlab.com:53918/proyecto-2";
 const dbName = "proyecto-2";
 
 router.get("/:login", (req, res) => {
