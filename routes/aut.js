@@ -5,6 +5,7 @@ const MongoClient = require("mongodb").MongoClient;
 const url = process.env.MONGOLAB_URI;
 const dbName = "proyecto-2";
 
+// verifica si un usuario está registrado y la contraseña coindice
 router.post("/login", (req, res) => {
 	const log = req.body;
 	const login = log.login;
@@ -18,6 +19,7 @@ router.post("/login", (req, res) => {
 	});
 });
 
+// crea una nueva cuenta, si no existe un usuario registrado con dicho login
 router.post("/crearCuenta", (req, res) => {
 	const cuenta = req.body;
 	const login = cuenta.login;
