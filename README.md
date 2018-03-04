@@ -7,7 +7,7 @@ Este proyecto se hace como entrega de la clase
 
 "Yo, como usuario, soy capaz de ver a quién le debo, cuánto le debo, quién me debe y cuánto me debe. También puedo ver el historial de todas las transacciones que he tenido con cada persona. Cuando se realiza alguna transacción con una persona (ésta me paga o yo le pago), se actualiza la deuda y el historial respectivo. Las deudas al crearse tienen un concepto. En la base de datos se tiene la información de los usuarios registrados. Para acceder, el usuario necesita autenticarse. Para cada usuario, se tendrá en la base de datos la información de todas las personas que éste haya registrado en sus cuentas personales, y para cada una de estas personas se tiene toda la información expuesta previamente."
 
-La aplicación se encuentra desplegada [aquí](https://proyecto-2-pc.herokuapp.com/). Las instrucciones de uso está en la propia aplicación.
+La aplicación se encuentra desplegada [aquí](https://proyecto-2-pc.herokuapp.com/). Las instrucciones de uso están en la propia aplicación.
 
 ## Tecnologias
 
