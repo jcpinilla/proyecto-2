@@ -5,7 +5,7 @@ export default class Tx extends React.Component {
 		const valor = this.props.valor;
 		const fecha = this.props.fecha;
 		const concepto = this.props.concepto;
-		const fechaFormato = new Date(fecha).toDateString();
+		const fechaFormato = new Date(fecha).toLocaleDateString("es-CO");
 		return (
 			<tr>
 				<td>{valor}</td>
