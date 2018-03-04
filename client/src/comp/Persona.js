@@ -12,19 +12,26 @@ export default class Persona extends React.Component {
 		const valor = persona.valor;
 		return (
 			<div>
-				<h2>{nombre}</h2>
-				<p>
-					{
-						valor < 0 ? "Me debe: " : (valor > 0) ? "Le debo: " : ""
-					}
-					{
-						valor !== 0 && Math.abs(valor)
-					}
-				</p>
-				<h3>Transacciones</h3>
-				<AnadirTx
-					anadirTx={this.props.anadirTx}
-				/>
+				<div className="container">
+					<div className="row">
+						<div className="col-sm-6">
+							<h1>{nombre}</h1>
+							<p id="valor-persona">
+								{
+									valor < 0 ? "Me debe: " : (valor > 0) ? "Le debo: " : "Al día"
+								}
+								{
+									valor !== 0 && Math.abs(valor)
+								}
+							</p>
+						</div>
+						<div className="col-sm-6">
+							<AnadirTx
+								anadirTx={this.props.anadirTx}
+							/>
+						</div>
+					</div>
+				</div>
 				<br />
 				<Txs {...persona} />
 			</div>

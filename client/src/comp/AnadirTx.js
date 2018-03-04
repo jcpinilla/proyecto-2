@@ -17,15 +17,9 @@ export default class AnadirTx extends React.Component {
 
 	manejarCambioValor(e) {
 		const valorString = e.target.value;
-		const valorFloat = parseFloat(valorString);
 
-		if (Number.isNaN(valorFloat)&&!(valorString === "")&&!valorString.endsWith(".")) {
-			
-			alert("nan");
-			return;
-		}
 		this.setState({
-			valor: valorFloat,
+			valor: valorString,
 			msgObligatorio: false
 		});
 	}
@@ -47,15 +41,17 @@ export default class AnadirTx extends React.Component {
 	manejarSubmit(recibo) {
 		const anadirTx = this.props.anadirTx;
 		let valor = this.state.valor;
-		if (valor === "") {
+		if (valor === "" || valor === "0") {
 			this.setState({
 				msgObligatorio: true
 			});
 			return;
 		}
+		valor = Math.abs(valor);
 		if (!recibo) {
 			valor = valor * -1;
 		}
+		valor = +valor;
 		const concepto = this.state.concepto;
 		anadirTx(valor, concepto);
 		this.setState({
@@ -66,33 +62,39 @@ export default class AnadirTx extends React.Component {
 
 	render() {
 		return (
-			<form>
-				<input
-					type="text"
-					value={this.state.valor}
-					placeholder="Valor"
-					onChange={this.manejarCambioValor}/><br />
-				<input
-					type="text"
-					value={this.state.concepto}
-					placeholder="Concepto (opcional)"
-					onChange={this.manejarCambioConcepto}/><br />
-				<button
-					type="button"
-					onClick={this.manejarRecibo}>
-				Recibo
-				</button>
-				<button
-					type="button"
-					onClick={this.manejarDoy}>
-				Doy
-				</button>
-				<br />
-				{
-					this.state.msgObligatorio &&
-					<span>El valor es obligatorio</span>
-				}
-			</form>
+			<div>
+				<h3>Agregar transacción</h3>
+				<form>
+					<input
+						type="number"
+						value={this.state.valor}
+						placeholder="Valor"
+						onChange={this.manejarCambioValor}/><br />
+					<input
+						type="text"
+						value={this.state.concepto}
+						placeholder="Concepto (opcional)"
+						onChange={this.manejarCambioConcepto}/><br />
+					<button
+						className="btn btn-info"
+						type="button"
+						onClick={this.manejarRecibo}>
+					Recibo
+					</button>
+					<button
+						id="btn-doy"
+						className="btn btn-info"
+						type="button"
+						onClick={this.manejarDoy}>
+					Doy
+					</button>
+					<br />
+					{
+						this.state.msgObligatorio &&
+						<span>El valor es obligatorio</span>
+					}
+				</form>
+			</div>
 		);
 	}
 }

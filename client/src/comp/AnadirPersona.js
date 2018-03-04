@@ -17,6 +17,10 @@ export default class AnadirPersona extends React.Component {
 	}
 
 	anadirPersona() {
+		const nombre = this.state.nombre;
+		if (nombre === "") {
+			return;
+		}
 		this.props.anadirPersona(this.state.nombre);
 		this.setState({
 			nombre: ""
@@ -27,7 +31,7 @@ export default class AnadirPersona extends React.Component {
 		return (
 			<div>
 				<input type="text" placeholder="Nombre" value={this.state.nombre} onChange={this.manejarCambio}/>
-				<button type="button" onClick={this.anadirPersona}>Agregar Persona</button>
+				<button id="anadir-persona" className="btn btn-info" type="button" onClick={this.anadirPersona}>Agregar Persona</button>
 			</div>
 		);
 	}

@@ -19,7 +19,6 @@ router.post("/login", (req, res) => {
 });
 
 router.post("/crearCuenta", (req, res) => {
-	console.log(url);
 	const cuenta = req.body;
 	const login = cuenta.login;
 	query({login}, (data, db) => {

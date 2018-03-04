@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/App.css";
 
 export default class CrearCuenta extends React.Component {
 	constructor(props) {
@@ -53,12 +54,17 @@ export default class CrearCuenta extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<input type="text" placeholder="Login" value={this.state.login} onChange={this.manejarCambioLogin}/>
-				<input type="password" placeholder="Contraseña" value={this.state.contrasena} onChange={this.manejarCambioContrasena} />
-				<input type="password" placeholder="Confirmar contraseña" value={this.state.contrasenaConf} onChange={this.manejarCambioContrasenaConf} />
-				<input type="text" placeholder="Nombre" value={this.state.nombre} onChange={this.manejarCambioNombre} />
-				<button type="button" onClick={this.manjearSubmit}>Crear Cuenta</button>
+			<div className="card">
+				<div className="card-header">
+					<strong>Crear cuenta</strong>
+				</div>
+				<div className="card-body">
+					<input type="text" placeholder="Login" value={this.state.login} onChange={this.manejarCambioLogin}/><br />
+					<input type="password" placeholder="Contraseña" value={this.state.contrasena} onChange={this.manejarCambioContrasena} /><br />
+					<input type="password" placeholder="Confirmar contraseña" value={this.state.contrasenaConf} onChange={this.manejarCambioContrasenaConf} /><br />
+					<input type="text" placeholder="Nombre" value={this.state.nombre} onChange={this.manejarCambioNombre} /><br />
+					<button className="btn btn-info" type="button" onClick={this.manjearSubmit}>Crear cuenta</button>
+				</div>
 			</div>
 		);
 	}

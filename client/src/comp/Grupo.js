@@ -7,8 +7,8 @@ export default class Grupo extends React.Component {
 		const personas = this.props.personas;
 		const onClick = this.props.onClick;
 		return (
-			<table>
-				<thead>
+			<table className="table table-hover">
+				<thead className="table-secondary">
 					<tr>
 						<th colSpan="2">{titulo}</th>
 					</tr>

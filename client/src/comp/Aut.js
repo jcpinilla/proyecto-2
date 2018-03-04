@@ -57,9 +57,15 @@ export default class Aut extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<Login ingresar={this.ingresar} />
-				<CrearCuenta crearCuenta={this.crearCuenta} />
+			<div id="aut" className="container">
+				<div className="row">
+					<div className="col-sm-6 text-center">
+						<Login ingresar={this.ingresar} />
+					</div>
+					<div className="col-sm-6 text-center">
+						<CrearCuenta crearCuenta={this.crearCuenta} />
+					</div>
+				</div>
 			</div>
 		);
 	}

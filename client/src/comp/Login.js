@@ -30,10 +30,15 @@ export default class Login extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<input type="text" placeholder="Login" value={this.state.login} onChange={this.manejarCambioLogin}/>
-				<input type="password" placeholder="Contraseña" value={this.state.contrasena} onChange={this.manejarCambioContrasena} />
-				<button type="button" onClick={this.manjearSubmit}>Ingresar</button>
+			<div className="card">
+				<div className="card-header">
+					<strong>Iniciar sesión</strong>
+				</div>
+				<div className="card-body">
+					<input type="text" placeholder="Login" value={this.state.login} onChange={this.manejarCambioLogin}/><br />
+					<input type="password" placeholder="Contraseña" value={this.state.contrasena} onChange={this.manejarCambioContrasena} /><br />
+					<button className="btn btn-info" onClick={this.manjearSubmit}>Ingresar</button>
+				</div>
 			</div>
 		);
 	}

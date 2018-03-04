@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const MongoClient = require("mongodb").MongoClient;
-const url = "mongodb://admin:admin@ds253918.mlab.com:53918/proyecto-2";
+const url = process.env.MONGOLAB_URI;
 const dbName = "proyecto-2";
 
 router.get("/:login", (req, res) => {
@@ -27,9 +27,13 @@ router.post("/:login/personas", (req, res) => {
 	const persona = req.body;
 	query({login}, (data, db) => {
 		let personas = data.personas;
-		personas.push(persona);
-		db.collection("usuarios").updateOne({login}, {$set: {personas}});
-		res.json(personas);
+		if (personas.filter(p => p.nombre === persona.nombre).length === 1) {
+			res.json(null);
+		} else {
+			personas.push(persona);
+			db.collection("usuarios").updateOne({login}, {$set: {personas}});
+			res.json(personas);
+		}
 	});
 });
 

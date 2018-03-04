@@ -11,19 +11,20 @@ export default class Grupos extends React.Component {
 		const onClick = this.props.onClick;
 		return (
 			<div>
-				<h2>Grupos</h2>
+				<h1>Grupos</h1>
+				<input id="filtrar" type="text" placeholder="Filtrar por nombre" value={this.props.filtro} onChange={this.props.filtrar}/><br />
 				<Grupo
-					titulo="Me deben:"
+					titulo="Me deben"
 					personas={meDeben}
 					onClick={onClick}
 				/>
 				<Grupo
-					titulo="Debo a:"
+					titulo="Debo a"
 					personas={deboA}
 					onClick={onClick}
 				/>
 				<Grupo
-					titulo="Otros:"
+					titulo="Otros"
 					personas={otros}
 					onClick={onClick}
 				/>

@@ -8,22 +8,25 @@ export default class Txs extends React.Component {
 			return null;
 		}
 		return (
-			<table>
-				<thead>
-					<tr>
-						<th>Valor</th>
-						<th>Fecha</th>
-						<th>Concepto</th>
-					</tr>
-				</thead>
-				<tbody>
-					{
-						txs.map(tx =>
-							<Tx key={tx.fecha} {...tx} />
-						)
-					}
-				</tbody>	
-			</table>
+			<div>
+				<h3>Transacciones</h3>
+				<table className="table table-hover">
+					<thead className="table-secondary">
+						<tr>
+							<th>Valor</th>
+							<th>Fecha</th>
+							<th>Concepto</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							txs.map(tx =>
+								<Tx key={tx.fecha} {...tx} />
+							)
+						}
+					</tbody>	
+				</table>
+			</div>
 		);
 	}
 }

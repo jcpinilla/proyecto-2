@@ -81,7 +81,11 @@ export default class App extends React.Component {
 		})
 			.then(res => res.json())
 			.then(data => {
-				this.setState({personas: data});
+				if(data !== null) {
+					this.setState({personas: data});
+				} else {
+					alert("La persona ya se encuentra registrada");
+				}
 			});
 	}
 
@@ -97,18 +101,26 @@ export default class App extends React.Component {
 		);
 		return (
 			<div>
-				<button type="button" onClick={this.props.cerrarSesion}>Cerrar Sesion</button><br />
-				<input type="text" placeholder="Filtrar por nombre" value={this.state.filtro} onChange={this.filtrar}/>
-				<Grupos
-					personas={personas}
-					onClick={this.cambiarPersona}
-					anadirPersona={this.anadirPersona}
-				/>
-				<br />
-				<Persona
-					persona={this.darPersona()}
-					anadirTx={this.anadirTx}
-				/>
+				<div className="container">
+					<button id="cerrar-sesion" className="btn btn-secondary" type="button" onClick={this.props.cerrarSesion}>Cerrar Sesion</button><br />
+					<div className="row">
+						<div className="col-sm-6">
+							<Grupos
+								filtrar={this.filtrar}
+								personas={personas}
+								onClick={this.cambiarPersona}
+								anadirPersona={this.anadirPersona}
+							/>
+							<br />
+						</div>
+						<div className="col-sm-6">
+							<Persona
+								persona={this.darPersona()}
+								anadirTx={this.anadirTx}
+							/>
+						</div>
+					</div>
+				</div>
 			</div>
 		);
 	}
