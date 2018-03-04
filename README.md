@@ -16,6 +16,10 @@ En este proyecto utilizo diferentes tecnologias que permiten hacer paginas web d
   - React 
   - Bootstrap
   - MongoDB
+  
+## Autores
+  - [Juan Camilo Pinilla](https://github.com/jcpinilla/)
+  - [Juan Diego Chaves](https://github.com/jd-chaves)
 
 License
 ----
