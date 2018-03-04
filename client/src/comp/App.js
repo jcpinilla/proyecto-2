@@ -110,7 +110,8 @@ export default class App extends React.Component {
 						En la parte de <strong>Grupos </strong>
 						puedes ver quién te debe, a quién le debes y otras personas con las que estás al día. Puedes filtrar las personas en los grupos por nombre.
 						Haciendo click sobre cada persona puedes ver el detalle de todas las transacciones que has tenido 
-						con esa persona, así como agregar nuevas transacciones.
+						con esa persona, así como agregar nuevas transacciones. En la parte de <strong>Transacciones </strong>, 
+						un valor <em>positivo</em> indica que recibiste dinero, mientras que un valor <em>negativo</em> indica que diste dinero.
 					</div>
 				}
 				<div className="container">
