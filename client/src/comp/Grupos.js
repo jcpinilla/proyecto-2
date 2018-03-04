@@ -1,5 +1,6 @@
 import React from "react";
 import Grupo from "./Grupo";
+import AnadirPersona from "./AnadirPersona"
 
 export default class Grupos extends React.Component {
 	render() {
@@ -10,6 +11,7 @@ export default class Grupos extends React.Component {
 		const onClick = this.props.onClick;
 		return (
 			<div>
+				<h2>Grupos</h2>
 				<Grupo
 					titulo="Me deben:"
 					personas={meDeben}
@@ -25,6 +27,7 @@ export default class Grupos extends React.Component {
 					personas={otros}
 					onClick={onClick}
 				/>
+				<AnadirPersona anadirPersona={this.props.anadirPersona} />
 			</div>
 		);
 	}

@@ -19,7 +19,7 @@ export default class Txs extends React.Component {
 				<tbody>
 					{
 						txs.map(tx =>
-							<Tx key={tx.id} {...tx} />
+							<Tx key={tx.fecha} {...tx} />
 						)
 					}
 				</tbody>	
