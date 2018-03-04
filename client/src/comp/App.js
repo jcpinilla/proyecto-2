@@ -101,6 +101,18 @@ export default class App extends React.Component {
 		);
 		return (
 			<div>
+				{
+					this.props.primeraVez &&
+					<div className="alert alert-info alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>
+						<strong>¡Bienvenido! </strong>Ésta es una aplicación para manejar las cuentas personales. 
+						Puedes agregar personas con las que quieres manejar las cuentas con el botón <strong>Agregar Persona</strong>.
+						En la parte de <strong>Grupos </strong>
+						puedes ver quién te debe, a quién le debes y otras personas con las que estás al día. Puedes filtrar las personas en los grupos por nombre.
+						Haciendo click sobre cada persona puedes ver el detalle de todas las transacciones que has tenido 
+						con esa persona, así como agregar nuevas transacciones.
+					</div>
+				}
 				<div className="container">
 					<button id="cerrar-sesion" className="btn btn-secondary" type="button" onClick={this.props.cerrarSesion}>Cerrar Sesion</button><br />
 					<div className="row">
@@ -111,7 +123,6 @@ export default class App extends React.Component {
 								onClick={this.cambiarPersona}
 								anadirPersona={this.anadirPersona}
 							/>
-							<br />
 						</div>
 						<div className="col-sm-6">
 							<Persona

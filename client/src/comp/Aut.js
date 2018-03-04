@@ -24,7 +24,7 @@ export default class Aut extends React.Component {
 			.then(res => res.json())
 			.then(data => {
 				if (data.res === "ok") {
-					this.props.ingresar(login);
+					this.props.ingresar(login, false);
 				} else {
 					alert("Login o contraseña incorrecta");
 				}
@@ -48,7 +48,7 @@ export default class Aut extends React.Component {
 			.then(res => res.json())
 			.then(data => {
 				if (data.res === "ok") {
-					this.props.ingresar(login);
+					this.props.ingresar(login, true);
 				} else {
 					alert("El usuario ya está registrado");
 				}
@@ -58,6 +58,7 @@ export default class Aut extends React.Component {
 	render() {
 		return (
 			<div id="aut" className="container">
+				<h3 id="welcome-msg" className="display-3">Maneja tus cuentas personales de manera <strong>sencilla</strong></h3>
 				<div className="row">
 					<div className="col-sm-6 text-center">
 						<Login ingresar={this.ingresar} />

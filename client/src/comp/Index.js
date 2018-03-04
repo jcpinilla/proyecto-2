@@ -6,16 +6,18 @@ export default class Index extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			login: null
+			login: null,
+			primeraVez: false
 		};
 
 		this.ingresar = this.ingresar.bind(this);
 		this.cerrarSesion = this.cerrarSesion.bind(this);
 	}
 
-	ingresar(login) {
+	ingresar(login, primeraVez) {
 		this.setState({
-			login
+			login,
+			primeraVez
 		});
 	}
 
@@ -35,6 +37,7 @@ export default class Index extends React.Component {
 				{this.state.login !== null &&
 					<App
 						login={this.state.login}
+						primeraVez={this.state.primeraVez}
 						cerrarSesion={this.cerrarSesion}/>
 				}
 			</div>
