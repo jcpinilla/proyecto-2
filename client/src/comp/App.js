@@ -103,6 +103,9 @@ export default class App extends React.Component {
 			<div>
 				{
 					this.props.primeraVez &&
+					/*2. Se recomienda encapsular esta clase de mensajes estáticos en un componente aparte.
+					De este modo se pueden modificar más facilmente, e incluso se puede pensar en realizar 
+					mensajes mas personalidados (por ejemplo incluyendo el nombre de usuario en props)*/
 					<div className="alert alert-info alert-dismissible">
 						<button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>
 						<strong>¡Bienvenido! </strong>Ésta es una aplicación para manejar las cuentas personales. 
