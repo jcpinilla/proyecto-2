@@ -1,5 +1,7 @@
 import React from "react";
-
+{/*
+Podrían comentar el código. También sería bueno tener los comp en carpetas de manera más organizada.
+*/}
 export default class AnadirPersona extends React.Component {
 	constructor(props) {
 		super(props);
