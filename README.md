@@ -16,6 +16,8 @@ En este proyecto se utilizó el conjunto MERN para crear aplicaciones web dinám
   - Express
   - React
   - Node
+  
+[comment]: <> (Podrían incluir instrucciones de como realizar un proyecto como este, es decir, incluir que se debe instalar npm y demás.)
 
 ## Autores
   - [Juan Camilo Pinilla](https://github.com/jcpinilla/)
